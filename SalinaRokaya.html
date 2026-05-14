@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salina Rokaya | Portfolio</title>
+    
+    <!-- CUTE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Pink Favicon -->
+    <link rel="icon" type="image/jpg" href="12.jpg">
+
+    <style>
+        /* --- CSS VARIABLES: PINK CUTE THEME --- */
+        :root {
+            --bg-gradient-start: #ffe5ec; /* Very Light Pink */
+            --bg-gradient-end: #ffc2d1;   /* Soft Pink */
+            --bg-card: rgba(255, 255, 255, 0.9); /* White Glass */
+            --text-main: #5c3a4e;         /* Dark Raspberry (Readable) */
+            --text-muted: #8c6b7d;        /* Muted Pink-Grey */
+            --accent: #ff8ba7;            /* Soft Pink */
+            --highlight: #fb6f92;         /* Hot Pink (Buttons) */
+            --border: #ffdde1;            /* Very Light Border */
+            --radius: 25px;               /* Super Rounded */
+            --shadow: 0 10px 25px rgba(255, 139, 167, 0.2); /* Pink Shadow */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- SPARKLING PINK BACKGROUND --- */
+        body {
+            font-family: 'Quicksand', sans-serif; /* Cute Body Font */
+            line-height: 1.7;
+            color: var(--text-main);
+            
+            /* Gradient Base */
+            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+            
+            /* Glitter Pattern (White/Pink Dots) */
+            background-image: 
+                linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end)),
+                radial-gradient(white 20%, transparent 20%),
+                radial-gradient(white 20%, transparent 20%);
+            
+            background-size: 100% 100%, 60px 60px, 60px 60px;
+            background-position: 0 0, 0 0, 30px 30px;
+            
+            padding: 40px;
+            overflow-x: hidden;
+            
+            /* Sparkling Animation */
+            animation: sparkleMove 10s linear infinite;
+        }
+
+        @keyframes sparkleMove {
+            0% { background-position: 0 0, 0 0, 30px 30px; }
+            100% { background-position: 0 0, 0 60px, 30px 90px; }
+        }
+
+        /* Headings in Cute Cursive Font */
+        h1, h2, h3 {
+            font-family: 'Pacifico', cursive;
+            color: var(--text-main);
+            font-weight: 400;
+            line-height: 1.3;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* --- MAIN WRAPPER (Glass Card) --- */
+        .main-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--bg-card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            position: relative;
+            z-index: 10;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+        }
+
+        /* --- HEADER --- */
+        header {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1.2rem 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.8rem;
+            color: var(--highlight); /* Hot Pink Logo */
+            text-shadow: 2px 2px 0px #fff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .nav-links a:hover {
+            color: var(--highlight);
+            text-decoration: underline;
+            text-decoration-color: var(--accent);
+            text-decoration-thickness: 2px;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-main);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 120px 20px 80px;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            color: var(--text-main);
+        }
+
+        .hero-text .highlight {
+            color: var(--highlight);
+            display: block;
+            font-size: 1.2rem;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 500px;
+            color: var(--text-muted);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--highlight);
+            color: white;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(251, 111, 146, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(251, 111, 146, 0.6);
+            background-color: #fa5c7c;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 2px solid var(--text-main);
+            margin-left: 15px;
+            border-radius: 50px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--text-main);
+            color: white;
+            border-color: var(--text-main);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 320px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 50%; /* Circle for cute look */
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(92, 58, 78, 0.15);
+        }
+
+        /* --- SECTIONS GENERAL --- */
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--highlight);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        /* --- EDUCATION --- */
+        .education-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .edu-card {
+            background-color: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            border: 2px solid var(--border);
+            box-shadow: 0 5px 15px rgba(92, 58, 78, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .edu-card:hover {
+            transform: translateY(-10px) rotate(1deg);
+            border-color: var(--accent);
+            box-shadow: 0 15px 30px rgba(92, 58, 78, 0.1);
+        }
+
+        .edu-year {
+            font-size: 0.9rem;
+            color: white;
+            font-weight: 700;
+            background-color: var(--accent);
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .edu-degree {
+            font-size: 1.6rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .edu-school {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .edu-gpa {
+            display: inline-block;
+            background-color: #fff0f5;
+            color: var(--highlight);
+            padding: 8px 20px;
+            font-weight: 700;
+            border-radius: 20px;
+            border: 1px dashed var(--accent);
+        }
+
+        /* --- VASTRA PROJECT --- */
+        #project {
+            background-color: #fff5f8; /* Very faint pink section bg */
+        }
+
+        .project-container {
+            max-width: 950px;
+            margin: 0 auto;
+            display: flex;
+            background-color: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(92, 58, 78, 0.1);
+            border: 2px solid var(--border);
+        }
+
+        .project-img {
+            flex: 0 0 45%;
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-details {
+            flex: 1;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .tag {
+            background-color: var(--highlight);
+            color: white;
+            padding: 8px 18px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            align-self: flex-start;
+            box-shadow: 0 4px 10px rgba(251, 111, 146, 0.3);
+        }
+
+        .tech-list {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tech-list span {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            background: #fff0f5;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        /* --- SKILLS --- */
+        .skills-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .skill-pill {
+            background-color: white;
+            border: 2px solid var(--border);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .skill-pill i {
+            color: var(--highlight);
+            font-size: 1.3rem;
+        }
+
+        .skill-pill:hover {
+            background-color: var(--highlight);
+            color: white;
+            border-color: var(--highlight);
+            transform: scale(1.1) rotate(3deg);
+        }
+
+        .skill-pill:hover i {
+            color: white;
+        }
+
+        /* --- CONTACT --- */
+        .contact-box {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            background-color: white;
+            padding: 60px;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(92, 58, 78, 0.1);
+            border: 2px solid var(--border);
+        }
+
+        .contact-item {
+            margin: 20px 0;
+            font-size: 1.3rem;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .contact-item i {
+            color: var(--highlight);
+            margin-right: 10px;
+        }
+
+        .social-icons {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .social-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #fff0f5;
+            border: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--highlight);
+            font-size: 1.5rem;
+            transition: 0.3s;
+        }
+
+        .social-btn:hover {
+            background-color: var(--highlight);
+            color: white;
+            border-color: var(--highlight);
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #fff0f5;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 0;
+            border-top: 1px solid var(--border);
+            font-family: 'Pacifico', cursive;
+            font-size: 1.2rem;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+            
+            .main-wrapper {
+                border-radius: 0;
+                margin: 0;
+                box-shadow: none;
+                border: none;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 100px;
+                gap: 40px;
+            }
+
+            .hero-text p {
+                margin: 0 auto 30px;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                border-bottom: 2px solid var(--border);
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .project-container {
+                flex-direction: column;
+            }
+
+            .project-img {
+                height: 250px;
+            }
+
+            .hero-image img {
+                width: 250px;
+                height: 250px;
+            }
+
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+        
+        <!-- Header -->
+        <header>
+            <div class="nav-container">
+                <a href="#" class="logo">Salina Rokaya</a>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav>
+                    <ul class="nav-links" id="nav-links">
+                        <li><a href="#about" onclick="closeMenu()">About</a></li>
+                        <li><a href="#education" onclick="closeMenu()">Education</a></li>
+                        <li><a href="#project" onclick="closeMenu()">Project</a></li>
+                        <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero -->
+        <section id="about" class="hero">
+            <div class="hero-text">
+                <span class="highlight">BCSIT Student</span>
+                <h1>Hello, I'm Salina!</h1>
+                <p>I am currently pursuing my BCSIT degree at SAIM College. I am passionate about web development and creating clean, functional digital solutions.</p>
+                <a href="#contact" class="btn">Contact Me</a>
+                <a href="#education" class="btn btn-outline">View Education</a>
+            </div>
+            <div class="hero-image">
+                <img src="salina.jpg" alt="Salina Rokaya">
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <div class="section-header">
+                <h2>My Education</h2>
+                <p>Academic Journey</p>
+            </div>
+            
+            <div class="education-grid">
+                <!-- BCSIT Card -->
+                <div class="edu-card">
+                    <span class="edu-year">Current</span>
+                    <h3 class="edu-degree">BCSIT</h3>
+                    <p class="edu-school">SAIM College, Old Baneshwor, Kathmandu</p>
+                    <p>Pursuing a Bachelor's degree in Computer Science and Information Technology. Focusing on programming, networking, and system design.</p>
+                </div>
+
+                <!-- +2 Card -->
+                <div class="edu-card">
+                    <span class="edu-year">Completed</span>
+                    <h3 class="edu-degree">+2 Management</h3>
+                    <p class="edu-school">Padmodaya Public Model Secondary School, Ghorahi, Dang</p>
+                    <span class="edu-gpa">GPA: 3.08</span>
+                    <p style="margin-top: 20px;">Completed higher secondary education, building a strong foundation in management and business principles.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Section -->
+        <section id="project">
+            <div class="section-header">
+                <h2>Featured Project</h2>
+                <p>Recent Collaborative Work</p>
+            </div>
+
+            <div class="project-container">
+                <div class="project-img">
+                    <img src="pink.jpg" alt="Vastra Clothing Project">
+                </div>
+                <div class="project-details">
+                    <span class="tag">Group Project</span>
+                    <h2>Project Vastra</h2>
+                    <p><strong>Vastra</strong> is a clothing brand concept developed as a group project. The goal was to design a digital identity that reflects modern fashion and sustainability.</p>
+                    <br>
+                    <p>My role focused on structuring the content, designing the layout, and ensuring the user experience was seamless.</p>
+                    
+                    <div class="tech-list">
+                        <span><i class="fab fa-html5"></i> HTML5</span>
+                        <span><i class="fab fa-css3-alt"></i> CSS3</span>
+                        <span><i class="fas fa-users"></i> Teamwork</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="section-header">
+                <h2>My Skills</h2>
+            </div>
+            <div class="skills-wrapper">
+                <div class="skill-pill"><i class="fab fa-html5"></i> HTML5</div>
+                <div class="skill-pill"><i class="fab fa-css3-alt"></i> CSS3</div>
+                <div class="skill-pill"><i class="fab fa-js"></i> JavaScript</div>
+                <div class="skill-pill"><i class="fas fa-code"></i> VS Code</div>
+                <div class="skill-pill"><i class="fas fa-laptop"></i> MS Office</div>
+                <div class="skill-pill"><i class="fas fa-users"></i> Collaboration</div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="contact-box">
+                <h2>Let's Connect</h2>
+                <p style="margin-bottom: 30px; color: var(--text-muted);">I am always eager to learn new things and make new friends in the IT field.</p>
+                
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i> salina.rokaya@saim.edu.np
+                </div>
+                
+                <div class="social-icons">
+                    <a href="https://linkedin.com/in/salina-rokaya" target="_blank" class="social-btn" title="LinkedIn: Salina Rokaya">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/Salinarokaya" target="_blank" class="social-btn" title="GitHub: Salinarokaya">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:salina.rokaya@saim.edu.np" class="social-btn" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Made with <i class="fas fa-heart" style="color:var(--highlight)"></i> by Salina Rokaya</p>
+            <p style="font-size: 0.8rem; font-family: 'Quicksand', sans-serif; margin-top: 10px;">&copy; 2026 BCSIT Student at SAIM College</p>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        const icon = hamburger.querySelector('i');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        function closeMenu() {
+            if (window.innerWidth <= 768) {
+                navLinks.classList.remove('active');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+    </script>
+</body>
+</html>
